@@ -2,22 +2,24 @@
   "name": "v0",
   "private": true,
   "workspaces": [
+    "apps/*",
     "packages/*",
-    "apps/*"
+    "packages/email/*"
   ],
   "scripts": {
     "build": "turbo build",
     "clean": "git clean -xdf node_modules",
     "clean:workspaces": "turbo clean",
+    "format": "biome format --write .",
+    "lint": "turbo lint && manypkg check",
+    "typecheck": "turbo typecheck",
     "dev": "turbo dev --parallel",
     "test": "turbo test --parallel",
     "start:web": "turbo start --filter=@v0/web",
     "dev:web": "turbo dev --filter=@v0/web ",
     "start:app": "turbo start --filter=@v0/app",
     "dev:app": "turbo dev --filter=@v0/app ",
-    "format": "biome format --write .",
-    "lint": "turbo lint && manypkg check",
-    "typecheck": "turbo typecheck"
+    "db:migrate": "cd packages/database && bun run db:migrate"
   },
   "dependencies": {
     "@biomejs/biome": "1.9.4",

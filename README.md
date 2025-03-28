@@ -1,6 +1,6 @@
 # V0 Monorepo
 
-A modern monorepo setup using Turborepo, Bun, and TypeScript.
+A modern monorepo setup using Turborepo, Bun, and TypeScript. This monorepo contains multiple applications and shared packages, providing a scalable and maintainable development environment.
 
 ## Project Structure
 
@@ -8,10 +8,17 @@ A modern monorepo setup using Turborepo, Bun, and TypeScript.
 .
 ├── apps/          # Applications
 │   ├── app/      # Main application
-│   └── web/      # Web application
+│   ├── web/      # Web application
+│   ├── email/    # Email service application
+│   └── studio/   # Studio application
 ├── packages/     # Shared packages
 │   ├── ui/       # Shared UI components
-│   └── tsconfig/ # Shared TypeScript configurations
+│   ├── tsconfig/ # Shared TypeScript configurations
+│   ├── auth/     # Authentication package
+│   ├── database/ # Database utilities
+│   ├── email/    # Email service package
+│   ├── rate-limit/ # Rate limiting package
+│   └── security/ # Security utilities
 └── ...
 ```
 

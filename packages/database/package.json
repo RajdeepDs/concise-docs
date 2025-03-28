@@ -9,7 +9,8 @@
     "clean": "rm -rf .turbo node_modules",
     "lint": "biome check .",
     "format": "biome --write .",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "db:migrate": "npx prisma format && npx prisma generate && npx prisma db push"
   },
   "dependencies": {
     "@neondatabase/serverless": "^1.0.0",
