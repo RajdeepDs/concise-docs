@@ -16,6 +16,7 @@
   },
   "dependencies": {
     "@radix-ui/react-slot": "^1.1.2",
+    "@v0/auth": "workspace:*",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "lucide-react": "^0.475.0",
@@ -37,6 +38,7 @@
     "typescript": "^5.7.3"
   },
   "exports": {
+    "./providers": "./src/providers/index.tsx",
     "./globals.css": "./src/styles/globals.css",
     "./cn": "./src/utils/cn.ts",
     "./tailwind.config": "./tailwind.config.ts",

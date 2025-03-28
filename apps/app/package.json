@@ -12,6 +12,9 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
+    "@t3-oss/env-nextjs": "^0.12.0",
+    "@v0/auth": "workspace:*",
+    "@v0/database": "workspace:*",
     "@v0/ui": "workspace:*",
     "next": "15.2.4",
     "react": "^19.0.0",
