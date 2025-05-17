@@ -1,5 +1,5 @@
 {
-  "name": "@v0/email-studio",
+  "name": "@concise-docs/email-studio",
   "version": "1.0.0",
   "private": "true",
   "scripts": {
@@ -11,14 +11,14 @@
   },
   "dependencies": {
     "@react-email/components": "^0.0.34",
-    "@v0/email": "workspace:*",
+    "@concise-docs/email": "workspace:*",
     "react": "^19.0.0",
     "react-email": "^4.0.1"
   },
   "devDependencies": {
     "@types/node": "^22.13.14",
     "@types/react": "^19.0.12",
-    "@v0/tsconfig": "workspace:*",
+    "@concise-docs/tsconfig": "workspace:*",
     "typescript": "^5.8.2"
   }
 }

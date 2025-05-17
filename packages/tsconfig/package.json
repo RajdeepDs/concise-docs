@@ -1,5 +1,5 @@
 {
-  "name": "@v0/tsconfig",
+  "name": "@concise-docs/tsconfig",
   "private": true,
   "version": "1.0.0",
   "files": [

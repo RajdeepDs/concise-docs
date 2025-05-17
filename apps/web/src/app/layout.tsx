@@ -1,4 +1,5 @@
-import "@v0/ui/globals.css";
+import "@concise-docs/ui/globals.css";
+import { DesignSystemProvider } from "@concise-docs/ui/providers";
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 
@@ -23,11 +24,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        {children}
+        <DesignSystemProvider>{children}</DesignSystemProvider>
       </body>
     </html>
   );

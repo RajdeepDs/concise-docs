@@ -1,6 +1,6 @@
 import type { NextRequest } from "next/server";
 
-import { authMiddleware } from "@v0/auth/middleware";
+import { authMiddleware } from "@concise-docs/auth/middleware";
 
 export async function middleware(request: NextRequest) {
   const authResponse = await authMiddleware(request);

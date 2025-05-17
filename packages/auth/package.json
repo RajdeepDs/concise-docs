@@ -1,5 +1,5 @@
 {
-  "name": "@v0/auth",
+  "name": "@concise-docs/auth",
   "version": "1.0.0",
   "private": "true",
   "scripts": {
@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "@t3-oss/env-nextjs": "^0.12.0",
-    "@v0/database": "workspace:*",
+    "@concise-docs/database": "workspace:*",
     "better-auth": "^1.2.5",
     "next": "^15.2.4",
     "react": "^19.0.0",
@@ -21,7 +21,7 @@
     "@types/node": "^22.13.14",
     "@types/react": "^19.0.12",
     "@types/react-dom": "^19.0.4",
-    "@v0/tsconfig": "workspace:*",
+    "@concise-docs/tsconfig": "workspace:*",
     "typescript": "^5.8.2"
   },
   "exports": {

@@ -1,9 +1,9 @@
 {
-  "extends": "@v0/tsconfig/react-library.json",
+  "extends": "@concise-docs/tsconfig/react-library.json",
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
-      "@v0/ui/*": ["./src/*"]
+      "@concise-docs/ui/*": ["./src/*"]
     }
   },
   "include": ["src"],

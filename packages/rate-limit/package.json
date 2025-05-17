@@ -1,5 +1,5 @@
 {
-  "name": "@v0/rate-limit",
+  "name": "@concise-docs/rate-limit",
   "version": "1.0.0",
   "private": true,
   "type": "module",
@@ -15,7 +15,7 @@
   },
   "devDependencies": {
     "@types/node": "^22.13.14",
-    "@v0/tsconfig": "workspace:*",
+    "@concise-docs/tsconfig": "workspace:*",
     "typescript": "^5.8.2"
   },
   "exports": {

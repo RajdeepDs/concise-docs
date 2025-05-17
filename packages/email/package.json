@@ -1,5 +1,5 @@
 {
-  "name": "@v0/email",
+  "name": "@concise-docs/email",
   "version": "1.0.0",
   "private": true,
   "type": "module",
@@ -19,7 +19,7 @@
     "@types/node": "^22.13.14",
     "@types/react": "^19.0.12",
     "@types/react-dom": "^19.0.4",
-    "@v0/tsconfig": "workspace:*",
+    "@concise-docs/tsconfig": "workspace:*",
     "typescript": "^5.8.2"
   },
   "exports": {

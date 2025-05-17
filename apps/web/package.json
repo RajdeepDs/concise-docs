@@ -1,9 +1,9 @@
 {
-  "name": "@v0/web",
+  "name": "@concise-docs/web",
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "dev": "next dev --turbopack -p 3001",
+    "dev": "next dev --turbopack -p 3000",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
@@ -12,7 +12,10 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "@v0/ui": "workspace:*",
+    "@t3-oss/env-nextjs": "^0.12.0",
+    "@concise-docs/auth": "workspace:*",
+    "@concise-docs/database": "workspace:*",
+    "@concise-docs/ui": "workspace:*",
     "next": "15.2.4",
     "react": "^19.0.0",
     "react-dom": "^19.0.0"
@@ -22,7 +25,7 @@
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
-    "@v0/tsconfig": "workspace:*",
+    "@concise-docs/tsconfig": "workspace:*",
     "tailwindcss": "^4",
     "typescript": "^5"
   }

@@ -1,5 +1,5 @@
 {
-  "name": "@v0/security",
+  "name": "@concise-docs/security",
   "version": "1.0.0",
   "private": "true",
   "type": "module",
@@ -14,7 +14,7 @@
     "zod": "^3.24.2"
   },
   "devDependencies": {
-    "@v0/tsconfig": "workspace:*",
+    "@concise-docs/tsconfig": "workspace:*",
     "typescript": "^5.8.2"
   },
   "exports": {

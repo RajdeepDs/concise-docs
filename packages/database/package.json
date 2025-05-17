@@ -1,5 +1,5 @@
 {
-  "name": "@v0/database",
+  "name": "@concise-docs/database",
   "version": "1.0.0",
   "private": "true",
   "prisma": {
@@ -25,7 +25,7 @@
   "devDependencies": {
     "@types/node": "^22.13.14",
     "@types/ws": "^8.18.0",
-    "@v0/tsconfig": "workspace:*",
+    "@concise-docs/tsconfig": "workspace:*",
     "bufferutil": "^4.0.9",
     "prisma": "^6.5.0",
     "typescript": "^5.8.2"

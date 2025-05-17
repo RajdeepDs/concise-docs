@@ -1,5 +1,5 @@
 {
-  "name": "@v0/studio",
+  "name": "@concise-docs/studio",
   "version": "1.0.0",
   "scripts": {
     "dev": "prisma studio --schema ../../packages/database/src/prisma/schema.prisma --port 3005",

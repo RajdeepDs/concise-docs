@@ -1,4 +1,4 @@
-import { ContactTemplate } from "@v0/email/templates/contact";
+import { ContactTemplate } from "@concise-docs/email/templates/contact";
 
 const ExampleContactEmail = () => (
   <ContactTemplate

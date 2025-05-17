@@ -1,1 +1,1 @@
-export { default } from "@v0/ui/postcss";
+export { default } from "@concise-docs/ui/postcss";

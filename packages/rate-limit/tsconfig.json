@@ -1,5 +1,5 @@
 {
-  "extends": "@v0/tsconfig/react-library.json",
+  "extends": "@concise-docs/tsconfig/react-library.json",
   "compilerOptions": {
     "baseUrl": "."
   },

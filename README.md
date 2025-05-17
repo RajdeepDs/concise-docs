@@ -1,4 +1,4 @@
-# V0 Monorepo
+# Concise Docs Monorepo
 
 A modern monorepo setup using Turborepo, Bun, and TypeScript. This monorepo contains multiple applications and shared packages, providing a scalable and maintainable development environment.
 
@@ -6,9 +6,9 @@ A modern monorepo setup using Turborepo, Bun, and TypeScript. This monorepo cont
 
 ```
 .
-├── apps/          # Applications
-│   ├── app/      # Main application
-│   ├── web/      # Web application
+├── apps/         # Applications
+│   ├── web/      # Main web application (frontend)
+│   ├── api/      # API server application (backend)
 │   ├── email/    # Email service application
 │   └── studio/   # Studio application
 ├── packages/     # Shared packages
@@ -54,4 +54,4 @@ bun run build
 ## Development
 
 - `bun run dev:web` - Start the web development server
-- `bun run dev:app` - Start the app development server
+- `bun run dev:api` - Start the api development server

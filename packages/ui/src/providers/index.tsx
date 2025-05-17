@@ -1,4 +1,4 @@
-import { AuthProvider } from "@v0/auth/providers";
+import { AuthProvider } from "@concise-docs/auth/providers";
 import type { ThemeProviderProps } from "next-themes";
 import { ThemeProvider } from "./theme-provider";
 

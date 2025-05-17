@@ -1,4 +1,4 @@
-import { database } from "@v0/database/db";
+import { database } from "@concise-docs/database/db";
 import { betterAuth } from "better-auth";
 import { prismaAdapter } from "better-auth/adapters/prisma";
 import { nextCookies } from "better-auth/next-js";

@@ -15,17 +15,17 @@
     "typecheck": "turbo typecheck",
     "dev": "turbo dev --parallel",
     "test": "turbo test --parallel",
-    "start:web": "turbo start --filter=@v0/web",
-    "dev:web": "turbo dev --filter=@v0/web ",
-    "start:app": "turbo start --filter=@v0/app",
-    "dev:app": "turbo dev --filter=@v0/app ",
+    "start:web": "turbo start --filter=@concise-docs/web",
+    "dev:web": "turbo dev --filter=@concise-docs/web ",
+    "start:api": "turbo start --filter=@concise-docs/api",
+    "dev:api": "turbo dev --filter=@concise-docs/api ",
     "db:migrate": "cd packages/database && bun run db:migrate"
   },
   "dependencies": {
     "@biomejs/biome": "1.9.4",
     "@manypkg/cli": "^0.23.0",
     "turbo": "2.3.3",
-    "typescript": "^5.7.2"
+    "typescript": "^5.8.3"
   },
   "packageManager": "bun@1.1.38",
   "resolutions": {
