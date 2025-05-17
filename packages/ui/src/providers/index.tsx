@@ -1,4 +1,3 @@
-import { AuthProvider } from "@concise-docs/auth/providers";
 import type { ThemeProviderProps } from "next-themes";
 import { Toaster } from "../components/sonner";
 import { TooltipProvider } from "../components/tooltip";
@@ -11,9 +10,7 @@ export const DesignSystemProvider = ({
   ...properties
 }: DesignSystemProviderProperties) => (
   <ThemeProvider {...properties}>
-    <AuthProvider>
-      <TooltipProvider>{children}</TooltipProvider>
-    </AuthProvider>
+    <TooltipProvider>{children}</TooltipProvider>
     <Toaster />
   </ThemeProvider>
 );

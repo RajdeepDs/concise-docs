@@ -13,8 +13,6 @@
   },
   "dependencies": {
     "@t3-oss/env-nextjs": "^0.12.0",
-    "@concise-docs/auth": "workspace:*",
-    "@concise-docs/database": "workspace:*",
     "@concise-docs/ui": "workspace:*",
     "next": "15.2.4",
     "react": "^19.0.0",

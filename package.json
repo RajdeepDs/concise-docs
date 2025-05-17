@@ -1,11 +1,7 @@
 {
-  "name": "v0",
+  "name": "concise-docs",
   "private": true,
-  "workspaces": [
-    "apps/*",
-    "packages/*",
-    "packages/email/*"
-  ],
+  "workspaces": ["apps/*", "packages/*"],
   "scripts": {
     "build": "turbo build",
     "clean": "git clean -xdf node_modules",
@@ -16,13 +12,9 @@
     "dev": "turbo dev --parallel",
     "test": "turbo test --parallel",
     "start:web": "turbo start --filter=@concise-docs/web",
-    "dev:web": "turbo dev --filter=@concise-docs/web ",
+    "dev:web": "turbo dev --filter=@concise-docs/web",
     "start:api": "turbo start --filter=@concise-docs/api",
-    "dev:api": "turbo dev --filter=@concise-docs/api ",
-    "docker:up": "docker compose up -d",
-    "db:generate": "cd packages/database && bun db:generate",
-    "db:migrate": "cd packages/database && bun db:migrate",
-    "db:deploy": "turbo db:deploy --filter=@concise-docs/database"
+    "dev:api": "turbo dev --filter=@concise-docs/api"
   },
   "dependencies": {
     "@biomejs/biome": "1.9.4",
