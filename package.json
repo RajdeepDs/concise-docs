@@ -19,7 +19,10 @@
     "dev:web": "turbo dev --filter=@concise-docs/web ",
     "start:api": "turbo start --filter=@concise-docs/api",
     "dev:api": "turbo dev --filter=@concise-docs/api ",
-    "db:migrate": "cd packages/database && bun run db:migrate"
+    "docker:up": "docker compose up -d",
+    "db:generate": "cd packages/database && bun db:generate",
+    "db:migrate": "cd packages/database && bun db:migrate",
+    "db:deploy": "turbo db:deploy --filter=@concise-docs/database"
   },
   "dependencies": {
     "@biomejs/biome": "1.9.4",

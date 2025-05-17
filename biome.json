@@ -4,7 +4,7 @@
     "enabled": true
   },
   "linter": {
-    "ignore": ["node_modules"],
+    "ignore": ["node_modules", "./src/generated/**/*"],
     "enabled": true,
     "rules": {
       "recommended": true,
@@ -17,10 +17,24 @@
       },
       "correctness": {
         "useExhaustiveDependencies": "off"
+      },
+      "nursery": {
+        "useSortedClasses": {
+          "fix": "safe",
+          "level": "error",
+          "options": {
+            "attributes": ["className"],
+            "functions": ["clsx", "cva", "tw", "twMerge", "cn", "twJoin"]
+          }
+        }
       }
     }
   },
   "formatter": {
+    "ignore": ["./src/generated/**/*"],
     "indentStyle": "space"
+  },
+  "files": {
+    "ignore": ["./src/generated/**/*"]
   }
 }

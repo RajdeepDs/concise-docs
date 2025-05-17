@@ -1,11 +1,6 @@
 import type { NextRequest } from "next/server";
 
-import { authMiddleware } from "@concise-docs/auth/middleware";
-
-export async function middleware(request: NextRequest) {
-  const authResponse = await authMiddleware(request);
-  return authResponse;
-}
+export async function middleware(request: NextRequest) {}
 
 export const config = {
   matcher: [
