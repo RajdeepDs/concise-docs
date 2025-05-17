@@ -49,7 +49,7 @@ export const SignIn = () => {
         },
         onSuccess: () => {
           setSubmitted(false);
-          redirect("/getting-started/welcome");
+          redirect("/");
         },
         onError: () => {
           setSubmitted(false);

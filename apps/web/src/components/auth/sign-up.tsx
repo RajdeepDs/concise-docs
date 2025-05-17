@@ -61,7 +61,7 @@ export const SignUp = () => {
         onSuccess: () => {
           setSubmitted(false);
           form.reset();
-          redirect("/private-beta");
+          redirect("/sign-in");
         },
         onError: () => {
           setSubmitted(false);
