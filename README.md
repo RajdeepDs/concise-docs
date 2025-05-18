@@ -1,6 +1,6 @@
-# Concise Docs
+# ConciseDocs
 
-Concise Docs is a document summarization tool that enables users to upload documents (PDFs and text files) and generate concise, informative summaries. The application also provides the ability to export summaries as PDF files.
+ConciseDocs is a document summarization tool that enables users to upload documents (PDFs and text files) and generate concise, informative summaries. The application also provides the ability to export summaries as PDF files.
 
 ## Features
 
@@ -32,7 +32,7 @@ The project is organized as a monorepo with the following structure:
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/rajdeepds/concise-docs.git
+git clone https://github.com/RajdeepDs/concise-docs.git
 cd concise-docs
 ```
 
