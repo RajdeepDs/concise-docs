@@ -1,6 +1,5 @@
 import { Summarize } from "@/components/summarize";
 import ThemeButton from "@/components/theme-button";
-import { Button } from "@concise-docs/ui/components/button";
 import { Icons } from "@concise-docs/ui/lib/icons";
 
 export default function Home() {
@@ -12,7 +11,6 @@ export default function Home() {
           <h1 className="font-medium font-mono">Concise Docs</h1>
         </div>
         <div className="flex items-center gap-4">
-          <Button>Export</Button>
           <ThemeButton />
         </div>
       </header>

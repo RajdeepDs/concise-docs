@@ -1,11 +1,13 @@
 "use client";
 
 import { useRef, useState } from "react";
+import ExportToPdf from "./export-to-pdf";
 import FileUpload from "./file-upload";
 
 export function Summarize() {
   const [summary, setSummary] = useState("");
   const [uploading, setUploading] = useState(false);
+  const [documentTitle, setDocumentTitle] = useState("Document Summary");
 
   const lastProcessedFileRef = useRef<string | null>(null);
 
@@ -20,6 +22,10 @@ export function Summarize() {
 
     const formData = new FormData();
     formData.append("file", file);
+
+    // Update document title based on file name
+    const fileName = file.name.split(".")[0];
+    setDocumentTitle(`${fileName} Summary`);
 
     try {
       const response = await fetch("http://localhost:8000/summarize", {
@@ -45,6 +51,14 @@ export function Summarize() {
     <div className="mx-auto flex h-full w-full flex-col items-center justify-center gap-8">
       <FileUpload onFileSelected={handleFileUpload} />
       <div className="w-full overflow-auto rounded-md border bg-accent p-4">
+        <div className="mb-2 flex items-center justify-between">
+          <h2 className="font-semibold text-lg">{documentTitle}</h2>
+          <ExportToPdf
+            summary={summary}
+            documentTitle={documentTitle}
+            disabled={uploading || !summary.trim()}
+          />
+        </div>
         <p className="whitespace-pre-wrap text-sm">
           {uploading
             ? "Summarizing document..."

@@ -4,3 +4,6 @@ sumy
 nltk
 transformers
 torch
+reportlab
+python-multipart
+PyPDF2

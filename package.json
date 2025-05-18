@@ -13,8 +13,7 @@
     "test": "turbo test --parallel",
     "start:web": "turbo start --filter=@concise-docs/web",
     "dev:web": "turbo dev --filter=@concise-docs/web",
-    "start:api": "turbo start --filter=@concise-docs/api",
-    "dev:api": "turbo dev --filter=@concise-docs/api"
+    "dev:api": "cd apps/api && source venv/bin/activate && python main.py"
   },
   "dependencies": {
     "@biomejs/biome": "1.9.4",
