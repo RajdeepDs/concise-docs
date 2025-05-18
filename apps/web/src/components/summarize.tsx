@@ -1,5 +1,6 @@
 "use client";
 
+import { toast } from "@concise-docs/ui/components/sonner";
 import { useRef, useState } from "react";
 import ExportToPdf from "./export-to-pdf";
 import FileUpload from "./file-upload";
@@ -33,16 +34,17 @@ export function Summarize() {
         const data = await response.json();
         setSummary(data.summary || "No summary found.");
       } else {
-        console.error("Upload failed");
+        toast.error("Upload failed");
         setSummary("Failed to summarize the document.");
       }
     } catch (error) {
-      console.error("Error:", error);
+      toast.error(`Error: ${error}`);
       setSummary("An error occurred during upload.");
     } finally {
       setUploading(false);
     }
   };
+
   return (
     <div className="mx-auto flex h-full w-full flex-col items-center justify-center gap-8 px-2">
       <FileUpload onFileSelected={handleFileUpload} />

@@ -40,7 +40,7 @@ export default function FileUpload({ onFileSelected }: FileUploadProps) {
 
   useEffect(() => {
     if (file) {
-      onFileSelected(file.file);
+      onFileSelected(file.file as File);
     }
   }, [file?.id, onFileSelected]);
 

@@ -1,6 +1,3 @@
-import nltk
-nltk.data.path.append("./nltk_data")
-
 from typing import Union, Literal
 from transformers import AutoTokenizer, AutoModelForSeq2SeqLM
 from PyPDF2 import PdfReader
@@ -8,7 +5,7 @@ from io import BytesIO
 import torch
 
 # ---------------------------
-# 🧠 Model & Tokenizer Setup
+# Model & Tokenizer Setup
 # ---------------------------
 tokenizer = AutoTokenizer.from_pretrained("facebook/bart-large-cnn")
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
@@ -19,7 +16,7 @@ model = AutoModelForSeq2SeqLM.from_pretrained(
 
 
 # ---------------------------
-# 📄 PDF Text Extraction
+# PDF Text Extraction
 # ---------------------------
 def extract_text_from_pdf(pdf_file: bytes) -> str:
     try:
@@ -38,7 +35,7 @@ def extract_text_from_pdf(pdf_file: bytes) -> str:
 
 
 # ---------------------------
-# 🔪 Text Chunking (for long input)
+# Text Chunking (for long input)
 # ---------------------------
 def chunk_text(text: str, max_words: int = 600) -> list:
     words = text.split()
@@ -46,7 +43,7 @@ def chunk_text(text: str, max_words: int = 600) -> list:
 
 
 # ---------------------------
-# 📌 BART Summarization
+# BART Summarization
 # ---------------------------
 def summarize_with_bart(text: str) -> str:
     try:
@@ -77,7 +74,7 @@ def summarize_with_bart(text: str) -> str:
 
 
 # ---------------------------
-# 🔁 Unified Summarize Function (.txt or .pdf)
+# Unified Summarize Function (.txt or .pdf)
 # ---------------------------
 def summarize_file(content: Union[str, bytes], is_pdf: bool = False, method: Literal["bart"] = "bart") -> str:
     try:

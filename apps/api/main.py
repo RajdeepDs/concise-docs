@@ -25,6 +25,7 @@ app.add_middleware(
 # Include the PDF export router
 app.include_router(pdf_export_router)
 
+# Endpoint to summarize a file
 @app.post("/summarize")
 async def summarize(file: UploadFile = File(...)):
     if not (file.filename.endswith(".txt") or file.filename.endswith(".pdf")):

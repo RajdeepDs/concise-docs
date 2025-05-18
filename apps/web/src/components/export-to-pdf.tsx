@@ -1,6 +1,7 @@
 "use client";
 
 import { Button } from "@concise-docs/ui/components/button";
+import { toast } from "@concise-docs/ui/components/sonner";
 import { File, Loader2Icon } from "lucide-react";
 import { useState } from "react";
 
@@ -38,7 +39,7 @@ export default function ExportToPdf({
       });
 
       if (!response.ok) {
-        throw new Error("Failed to export PDF");
+        toast.error("Failed to export PDF");
       }
 
       // Get the PDF binary data
@@ -58,7 +59,7 @@ export default function ExportToPdf({
       window.URL.revokeObjectURL(url);
       document.body.removeChild(a);
     } catch (error) {
-      console.error("Error exporting to PDF:", error);
+      toast.error("Error exporting to PDF.");
       alert("Failed to export PDF. Please try again later.");
     } finally {
       setExporting(false);

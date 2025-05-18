@@ -9,9 +9,6 @@
     "format": "biome format --write .",
     "lint": "turbo lint && manypkg check",
     "typecheck": "turbo typecheck",
-    "dev": "turbo dev --parallel",
-    "test": "turbo test --parallel",
-    "start:web": "turbo start --filter=@concise-docs/web",
     "dev:web": "turbo dev --filter=@concise-docs/web",
     "dev:api": "cd apps/api && source venv/bin/activate && python main.py"
   },

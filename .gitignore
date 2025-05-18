@@ -43,4 +43,11 @@ yarn-error.log*
 # turbo
 .turbo
 
+# Python / API specific
 /apps/api/venv
+/apps/api/__pycache__
+/apps/api/**/__pycache__/
+/apps/api/**/*.py[cod]
+/apps/api/**/*$py.class
+/apps/api/nltk_data/
+apps/api/model_cache/
