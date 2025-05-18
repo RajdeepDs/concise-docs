@@ -23,17 +23,19 @@ app.add_middleware(
 
 @app.post("/summarize")
 async def summarize(file: UploadFile = File(...)):
-    if not file.filename.endswith(".txt"):
+    if not (file.filename.endswith(".txt") or file.filename.endswith(".pdf")):
         logger.warning(f"Rejected file: {file.filename}")
-        raise HTTPException(status_code=400, detail="Only .txt files are supported.")
+        raise HTTPException(status_code=400, detail="Only .txt and .pdf files are supported.")
     try:
-        text = await file.read()
-        content = text.decode("utf-8")
+        content = await file.read()
+        is_pdf = file.filename.endswith(".pdf")
+        if not is_pdf:
+            content = content.decode("utf-8")
     except Exception as e:
         logger.error(f"Error reading file: {e}")
         raise HTTPException(status_code=500, detail="Failed to read file.")
     try:
-        summary = summarize_text_file(content)
+        summary = summarize_text_file(content, is_pdf=is_pdf)
     except Exception as e:
         logger.error(f"Error generating summary: {e}")
         raise HTTPException(status_code=500, detail="Failed to generate summary.")
