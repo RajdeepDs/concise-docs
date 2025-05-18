@@ -23,10 +23,6 @@ export function Summarize() {
     const formData = new FormData();
     formData.append("file", file);
 
-    // Update document title based on file name
-    const fileName = file.name.split(".")[0];
-    setDocumentTitle(`${fileName} Summary`);
-
     try {
       const response = await fetch("http://localhost:8000/summarize", {
         method: "POST",
@@ -48,18 +44,20 @@ export function Summarize() {
     }
   };
   return (
-    <div className="mx-auto flex h-full w-full flex-col items-center justify-center gap-8">
+    <div className="mx-auto flex h-full w-full flex-col items-center justify-center gap-8 px-2">
       <FileUpload onFileSelected={handleFileUpload} />
       <div className="w-full overflow-auto rounded-md border bg-accent p-4">
         <div className="mb-2 flex items-center justify-between">
-          <h2 className="font-semibold text-lg">{documentTitle}</h2>
+          <h2 className="select-none font-medium text-secondary-foreground">
+            Document summary
+          </h2>
           <ExportToPdf
             summary={summary}
             documentTitle={documentTitle}
             disabled={uploading || !summary.trim()}
           />
         </div>
-        <p className="whitespace-pre-wrap text-sm">
+        <p className="whitespace-pre-wrap text-muted-foreground text-sm">
           {uploading
             ? "Summarizing document..."
             : summary || "Summary response will show up here"}

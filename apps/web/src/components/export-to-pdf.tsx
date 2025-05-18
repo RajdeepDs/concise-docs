@@ -67,6 +67,7 @@ export default function ExportToPdf({
 
   return (
     <Button
+      size={"sm"}
       onClick={handleExport}
       disabled={disabled || !summary.trim() || exporting}
       className="flex items-center gap-2"

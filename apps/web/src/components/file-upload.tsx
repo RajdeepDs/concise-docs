@@ -45,7 +45,7 @@ export default function FileUpload({ onFileSelected }: FileUploadProps) {
   }, [file?.id, onFileSelected]);
 
   return (
-    <div className="flex w-1/3 flex-col gap-2">
+    <div className="flex flex-col gap-2 md:w-1/3">
       <div
         onClick={openFileDialog}
         onDragEnter={handleDragEnter}
