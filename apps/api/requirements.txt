@@ -2,3 +2,5 @@ fastapi
 uvicorn
 sumy
 nltk
+transformers
+torch
