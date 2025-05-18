@@ -1,10 +1,13 @@
 import uvicorn
-from fastapi import FastAPI
+from fastapi import FastAPI, File, UploadFile, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
-from pydantic import BaseModel
-from typing import List
+from summarizer import summarize_text_file
+import logging
 
 app = FastAPI()
+
+logging.basicConfig(level=logging.INFO)
+logger = logging.getLogger(__name__)
 
 origins = [
     "http://localhost:3000",
@@ -18,10 +21,24 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-# Say hello world
-@app.get("/")
-async def root():
-    return {"message": "Hello World"}
+@app.post("/summarize")
+async def summarize(file: UploadFile = File(...)):
+    if not file.filename.endswith(".txt"):
+        logger.warning(f"Rejected file: {file.filename}")
+        raise HTTPException(status_code=400, detail="Only .txt files are supported.")
+    try:
+        text = await file.read()
+        content = text.decode("utf-8")
+    except Exception as e:
+        logger.error(f"Error reading file: {e}")
+        raise HTTPException(status_code=500, detail="Failed to read file.")
+    try:
+        summary = summarize_text_file(content)
+    except Exception as e:
+        logger.error(f"Error generating summary: {e}")
+        raise HTTPException(status_code=500, detail="Failed to generate summary.")
+    logger.info(f"Summary generated for file: {file.filename}")
+    return {"summary": summary}
 
 
 if __name__ == "__main__":
