@@ -6,6 +6,7 @@ import {
   BellDot,
   BookOpen,
   Calendar,
+  Check,
   ChevronDown,
   ChevronLeft,
   ChevronRight,
@@ -13,7 +14,9 @@ import {
   CircleAlert,
   CircleXIcon,
   Command,
+  Copy,
   CreditCard,
+  Download,
   Ellipsis,
   Home,
   Inbox,
@@ -73,6 +76,9 @@ export const Icons = {
   star: Star,
   maximize: Maximize2,
   pen: Pen,
+  copy: Copy,
+  download: Download,
+  check: Check,
   megaphone: (props: React.SVGProps<SVGSVGElement>) => (
     <svg
       width="14"

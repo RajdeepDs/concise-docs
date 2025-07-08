@@ -2,7 +2,8 @@
 
 import { Button } from "@concise-docs/ui/components/button";
 import { toast } from "@concise-docs/ui/components/sonner";
-import { File, Loader2Icon } from "lucide-react";
+import { Icons } from "@concise-docs/ui/lib/icons";
+import { Loader2Icon } from "lucide-react";
 import { useState } from "react";
 
 interface ExportToPdfProps {
@@ -71,12 +72,12 @@ export default function ExportToPdf({
       size={"sm"}
       onClick={handleExport}
       disabled={disabled || !summary.trim() || exporting}
-      className="flex items-center gap-2"
+      className="flex cursor-pointer items-center gap-2 bg-indigo-800 shadow-none hover:bg-indigo-700"
     >
       {exporting ? (
         <Loader2Icon className="h-4 w-4 animate-spin" />
       ) : (
-        <File className="h-4 w-4" />
+        <Icons.download />
       )}
       {exporting ? "Exporting..." : "Export as PDF"}
     </Button>

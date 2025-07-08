@@ -12,8 +12,10 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "@t3-oss/env-nextjs": "^0.12.0",
     "@concise-docs/ui": "workspace:*",
+    "@paper-design/shaders-react": "^0.0.43",
+    "@t3-oss/env-nextjs": "^0.12.0",
+    "motion": "^12.23.0",
     "next": "15.2.4",
     "react": "^19.0.0",
     "react-dom": "^19.0.0"
