@@ -69,10 +69,9 @@ export default function ExportToPdf({
 
   return (
     <Button
-      size={"sm"}
       onClick={handleExport}
       disabled={disabled || !summary.trim() || exporting}
-      className="flex cursor-pointer items-center gap-2 bg-indigo-800 shadow-none hover:bg-indigo-700"
+      className="flex h-10 cursor-pointer items-center gap-2 bg-indigo-800 text-lg shadow-none hover:bg-indigo-700"
     >
       {exporting ? (
         <Loader2Icon className="h-4 w-4 animate-spin" />

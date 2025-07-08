@@ -75,14 +75,14 @@ export function SummarizeBox({ summary, timeElapsed }: SummarizeBoxProps) {
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.3, ease: "easeOut" }}
           >
-            <p className="text-gray-700 text-sm">
+            <p className="text-base text-gray-700">
               📚 Summarized in {timeElapsed.toFixed(1)} seconds.
             </p>
             <div className="flex items-center gap-3">
               <Button
                 size={"icon"}
                 variant={"secondary"}
-                className="size-8 cursor-pointer"
+                className="size-10 cursor-pointer"
                 onClick={handleCopy}
               >
                 <AnimatePresence mode="wait">

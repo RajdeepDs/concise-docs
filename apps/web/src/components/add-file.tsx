@@ -107,25 +107,40 @@ export function FileUpload({ onFileSelected, children }: FileUploadProps) {
         </AlertDialog>
       )}
       {!file && (
-        <div
-          onClick={handleUploadClick}
-          onDragEnter={handleDragEnter}
-          onDragLeave={handleDragLeave}
-          onDragOver={handleDragOver}
-          onDrop={handleDrop}
-          data-dragging={isDragging || undefined}
-          className="flex min-h-0 w-fit flex-1 items-center gap-6 rounded-xl bg-transparent transition-colors has-disabled:pointer-events-none has-[input:focus]:border-ring has-disabled:opacity-50 has-[input:focus]:ring-[3px] has-[input:focus]:ring-ring/50 data-[dragging=true]:bg-accent/50"
-        >
-          <input
-            {...getInputProps()}
-            className="sr-only"
-            aria-label="Upload file"
-            disabled={Boolean(file)}
-          />
-          {children}
-          <p className="cursor-default text-indigo-950 text-xl">
-            Upload a file (PDF or TXT)...
-          </p>
+        <div>
+          <div
+            onClick={handleUploadClick}
+            onDragEnter={handleDragEnter}
+            onDragLeave={handleDragLeave}
+            onDragOver={handleDragOver}
+            onDrop={handleDrop}
+            data-dragging={isDragging || undefined}
+            className="flex min-h-0 w-fit flex-1 items-center gap-6 rounded-xl bg-transparent transition-colors has-disabled:pointer-events-none has-[input:focus]:border-ring has-disabled:opacity-50 has-[input:focus]:ring-[3px] has-[input:focus]:ring-ring/50 data-[dragging=true]:bg-accent/50"
+          >
+            <input
+              {...getInputProps()}
+              className="sr-only"
+              aria-label="Upload file"
+              disabled={Boolean(file)}
+            />
+            {children}
+            <p className="cursor-default text-indigo-950 text-xl">
+              Upload a file (PDF or TXT)...
+            </p>
+          </div>
+          {errors.length > 0 && (
+            <div className="mt-2 space-y-1">
+              {errors.map((error) => (
+                <div
+                  key={error}
+                  className="flex items-center gap-2 text-base text-red-800"
+                >
+                  <AlertCircleIcon className="size-4" />
+                  <span>{error}</span>
+                </div>
+              ))}
+            </div>
+          )}
         </div>
       )}
 
