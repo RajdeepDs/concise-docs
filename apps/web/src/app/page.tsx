@@ -8,7 +8,7 @@ export default function Home() {
   const [fileName, setFileName] = useState("");
   const subGreeting = `Here's a summary of ${fileName}.`;
   return (
-    <main className="flex w-full flex-col justify-between overflow-hidden">
+    <main className="flex w-full flex-col gap-10 ">
       {fileName ? (
         <Greetings subGreet={fileName && subGreeting} />
       ) : (

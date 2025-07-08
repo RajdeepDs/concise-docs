@@ -5,7 +5,7 @@ import { AboutDialog } from "./about-dialog";
 
 export function Header() {
   return (
-    <header className="flex w-full items-center justify-between text-white">
+    <header className="sticky top-0 flex w-full items-center justify-between text-white">
       <h1 className="select-none font-semibold text-4xl">ConciseDocs</h1>
       <div className="flex items-center gap-3">
         <Button

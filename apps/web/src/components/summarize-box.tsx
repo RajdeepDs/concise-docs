@@ -46,7 +46,7 @@ export function SummarizeBox({ summary, timeElapsed }: SummarizeBoxProps) {
       className="flex flex-col gap-4 rounded-lg border border-gray-300 bg-white/65 p-4"
     >
       <motion.p
-        className="text-indigo-950 text-lg leading-7"
+        className="text-2xl text-indigo-950 leading-7"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.3, delay: 0.3 }}

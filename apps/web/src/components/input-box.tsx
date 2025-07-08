@@ -1,6 +1,6 @@
 import { Button } from "@concise-docs/ui/components/button";
 import { toast } from "@concise-docs/ui/components/sonner";
-import { Icons } from "@concise-docs/ui/lib/icons";
+import { motion } from "motion/react";
 import { useRef, useState } from "react";
 import { FileUpload } from "./add-file";
 import { SummarizeBox } from "./summarize-box";
@@ -56,28 +56,35 @@ export function InputBox({ onFileSelect }: InputBoxProps) {
   };
 
   return (
-    <div className="flex flex-col gap-4">
-      {summary && (
-        <SummarizeBox summary={summary} timeElapsed={summarizationTime} />
-      )}
-      <div className="mt-auto flex w-full items-center justify-between rounded-xl bg-white/65 p-4">
+    <motion.div
+      className="flex flex-col justify-center gap-4"
+      initial={{ opacity: 0, y: 40 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{
+        duration: 1,
+        ease: "easeInOut",
+      }}
+    >
+      <div className="flex w-full items-center justify-between rounded-xl bg-white/65 p-4">
         <FileUpload onFileSelected={setFile}>
           <Button
             variant={"secondary"}
-            className="h-12 cursor-pointer text-indigo-950 text-lg"
+            className="h-15 cursor-pointer px-20 text-2xl text-indigo-950"
           >
-            <Icons.plus />
             Upload file
           </Button>
         </FileUpload>
         <Button
-          className="h-12 cursor-pointer bg-indigo-800 shadow-none hover:bg-indigo-700"
+          className="h-15 cursor-pointer bg-indigo-800 text-lg shadow-none hover:bg-indigo-700"
           disabled={!file || summarizing}
           onClick={() => file && handleFileUpload(file)}
         >
           {summarizing ? "Summarizing..." : " ⚡ Summarize"}
         </Button>
       </div>
-    </div>
+      {summary && (
+        <SummarizeBox summary={summary} timeElapsed={summarizationTime} />
+      )}
+    </motion.div>
   );
 }

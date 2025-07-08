@@ -114,7 +114,7 @@ export function FileUpload({ onFileSelected, children }: FileUploadProps) {
           onDragOver={handleDragOver}
           onDrop={handleDrop}
           data-dragging={isDragging || undefined}
-          className="flex min-h-0 w-fit flex-1 items-center gap-4 rounded-xl bg-transparent transition-colors has-disabled:pointer-events-none has-[input:focus]:border-ring has-disabled:opacity-50 has-[input:focus]:ring-[3px] has-[input:focus]:ring-ring/50 data-[dragging=true]:bg-accent/50"
+          className="flex min-h-0 w-fit flex-1 items-center gap-6 rounded-xl bg-transparent transition-colors has-disabled:pointer-events-none has-[input:focus]:border-ring has-disabled:opacity-50 has-[input:focus]:ring-[3px] has-[input:focus]:ring-ring/50 data-[dragging=true]:bg-accent/50"
         >
           <input
             {...getInputProps()}
@@ -123,7 +123,7 @@ export function FileUpload({ onFileSelected, children }: FileUploadProps) {
             disabled={Boolean(file)}
           />
           {children}
-          <p className="cursor-default text-indigo-950 text-lg">
+          <p className="cursor-default text-indigo-950 text-xl">
             Upload a file (PDF or TXT)...
           </p>
         </div>
@@ -133,12 +133,12 @@ export function FileUpload({ onFileSelected, children }: FileUploadProps) {
         <div className="space-y-2">
           <div
             key={file.id}
-            className="flex h-9 w-fit items-center justify-between gap-2 rounded-md border bg-background px-4"
+            className="flex h-15 w-fit items-center justify-between gap-2 rounded-md border bg-background px-6"
           >
             <div className="flex items-center gap-3 overflow-hidden text-indigo-950">
               <PaperclipIcon className="size-4 opacity-60" />
               <div className="min-w-0">
-                <p className="truncate ">{file.file.name}</p>
+                <p className="truncate text-lg">{file.file.name}</p>
               </div>
             </div>
             <Button
